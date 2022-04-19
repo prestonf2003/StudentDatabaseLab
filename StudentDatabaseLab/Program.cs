@@ -6,7 +6,7 @@
         bool runagain = true;
         while (runagain == true)
         {
-            string student = GetUserInput("Please Pick A Student or ask for a list").ToLower();
+            string student = GetUserInput("Please Pick A number 1-3 or ask for a list").ToLower();
             string[] studentnames = { "Preston", "Nicholas", "Adam" };
             string[] homeTown = { "Bloomfield", "Rochester", "Alpena" };
             string[] favoriteFood = { "Pasta", "Nachos", "Apple Pie" };
@@ -18,7 +18,8 @@
                 continue;
 
             }
-            else if(student == "1" || student == "2" || student == "3")
+
+            else if(student == "1" || student == "2" || student == "3" )
             {
               int num = int.Parse(student);
                int index = num - 1;
@@ -33,10 +34,11 @@
                     Console.WriteLine(homeTown[index]);
                 }
                 runagain = RunAgain();
-
-
-
-
+            }
+            else
+            {
+                Console.WriteLine("I didnt understand that try again");
+                continue;
             }
         }
     }
@@ -63,7 +65,7 @@
             Console.WriteLine("Please input y or n");
             Console.WriteLine("Lets try again");
             return RunAgain();
-
         }
-    }        
+    } 
+
 }
