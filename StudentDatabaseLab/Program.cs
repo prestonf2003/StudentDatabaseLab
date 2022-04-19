@@ -24,14 +24,20 @@
               int num = int.Parse(student);
                int index = num - 1;
                 Console.WriteLine(studentnames[index]);
+                Second:
                 string SecondPrompt = GetUserInput("Hometown or favorite food?").Trim();
-                if (SecondPrompt == "favoritefood")
+                if (SecondPrompt == "favoritefood" || SecondPrompt == "food" || SecondPrompt == "favorite")
                 {
                     Console.WriteLine(favoriteFood[index]);
                 }
-                else if(SecondPrompt == "hometown")
+                else if(SecondPrompt == "hometown" || SecondPrompt == "home" || SecondPrompt == "town")
                 {
                     Console.WriteLine(homeTown[index]);
+                }
+                else
+                {
+                    Console.WriteLine("You Had one job to pic favorite food or hometown");
+                    goto Second;
                 }
                 runagain = RunAgain();
             }
